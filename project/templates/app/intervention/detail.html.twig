@@ -1,0 +1,121 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Detail de l'intervention
+	{{datas}}
+{% endblock %}
+
+{% block body %}
+	<div class="row">
+		<div class="col-12 grid-margin">
+			<div class="card">
+				<div class="card-body">
+					<h3 class="card-title mb-4 text-uppercase">
+						{{datas}}</h3>
+					<div class="fluid-container"></div>
+				</div>
+			</div>
+		</div>
+		<div class="col-7 grid-margin">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title mb-4 text-uppercase">Detail de l'intervention</h5>
+					<div class="forms-sample">
+						<div class="form-group row">
+							<label class="col-sm-3 col-form-label">Pannes</label>
+							<div class="col-sm-9">
+								<ul>
+									{% for item in datas.pannes %}
+										<li>
+											<a href="{{path('app_panne_detail', {'id': item.id})}}">{{item}}</a>
+										</li>
+									{% endfor %}
+								</ul>
+							</div>
+						</div>
+						<hr>
+						<div class="form-group row">
+							<label class="col-sm-3 col-form-label">Travail effectué</label>
+							<div class="col-sm-9">
+								<p class="card-text text-justify">{{datas.diagnostique}}</p>
+							</div>
+						</div>
+						<hr>
+						<div class="form-group row">
+							<label class="col-sm-3 col-form-label">Observation</label>
+							<div class="col-sm-9">
+								<p class="card-text text-justify">{{datas.observation}}</p>
+							</div>
+						</div>
+						<hr>
+						<div class="form-group row">
+							<label class="col-sm-3 col-form-label">Techniciens</label>
+							<div class="col-sm-9">
+								<ul>
+									{% for item in datas.techniciens %}
+										<li>
+											<a href="{{path('app_technicien_detail', {'id': item.id})}}" class="text-{{ random(['primary', 'success', 'warning', 'info', 'danger']) }}">{{item}}</a>
+										</li>
+									{% endfor %}
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-5 grid-margin">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title mb-4 text-uppercase">Informations supplementaires</h5>
+					<div class="forms-sample">
+						<div class="form-group row">
+							<label class="col-sm-3 col-form-label">Ordinateur</label>
+							<div class="col-sm-9">
+								<p class="card-text text-justify">
+									<a href="{{path('app_ordinateur_detail', {'id': datas.ordinateur.id})}}">{{datas.ordinateur}}</a>
+								</p>
+							</div>
+						</div>
+						<hr>
+						<div class="form-group row">
+							<label class="col-sm-3 col-form-label">Peripheriques</label>
+							<div class="col-sm-9">
+								<ul>
+									{% for item in datas.ordinateur.agent.peripheriques %}
+										<li>{{(item is not null) ? item : '- neant -'}}</li>
+									{% endfor %}
+								</ul>
+							</div>
+						</div>
+						<hr>
+						<div class="form-group row">
+							<label class="col-sm-3 col-form-label">Agent</label>
+							<div class="col-sm-9">
+								<p class="card-text text-justify">
+									<a href="{{path('app_agent_detail', {'id': datas.ordinateur.agent.id})}}">{{datas.ordinateur.agent}}</a>
+								</p>
+								<p class="card-text text-justify">
+									{{(datas.ordinateur.agent.contacts is not null) ? datas.ordinateur.agent.contacts : ' - neant -'}}
+								</p>
+								<p class="card-text text-justify">
+									{{(datas.ordinateur.agent.emailPro is not null) ? datas.ordinateur.agent.emailPro : ' - neant -'}}
+								</p>
+								<p class="card-text text-justify">
+									{{(datas.ordinateur.agent.emailPerso is not null) ? datas.ordinateur.agent.emailPerso : ' - neant -'}}
+								</p>
+							</div>
+						</div>
+						<hr>
+						<div class="form-group row">
+							<label class="col-sm-3 col-form-label">Direction</label>
+							<div class="col-sm-9">
+								<p class="card-text text-justify">
+									{{datas.ordinateur.agent.service.direction}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

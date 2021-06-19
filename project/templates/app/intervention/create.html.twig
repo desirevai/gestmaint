@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edition de l'intervention{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-12 stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Edition d'inventaire</h4>
+                    {{ form_start(form, {'attr': {'class': 'forms-sample'}}) }}
+                    {{ form_widget(form) }}
+                    <div class="form-group row"> 
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-primary">Enregistrer</button> 
+                        </div>
+                        <div class="col-6">
+                            <a href="{{path('app_accueil')}}" class="btn btn-info">retour</a> 
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

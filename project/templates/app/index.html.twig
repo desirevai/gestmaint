@@ -1,0 +1,1668 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DirecteurController!
+{% endblock %}
+
+{% block body %}
+	<div class="row">
+		<div class="col-12">
+			<div class="alert alert-fill-primary" role="alert">
+				<i class="mdi mdi-alert-circle"></i>
+				There! This is a primary alert.
+			</div>
+		</div>
+		<div class="col-12">
+			<div class="alert alert-fill-success" role="alert">
+				<i class="mdi mdi-alert-circle"></i>
+				Well done! You successfully read this important alert message.
+			</div>
+		</div>
+		<div class="col-12">
+			<div class="alert alert-fill-info" role="alert">
+				<i class="mdi mdi-alert-circle"></i>
+				Heads up! This alert needs your attention, but it's not super important.
+			</div>
+		</div>
+		<div class="col-12">
+			<div class="alert alert-fill-warning" role="alert">
+				<i class="mdi mdi-alert-circle"></i>
+				Warning! Better check yourself, you're not looking too good.
+			</div>
+		</div>
+		<div class="col-12">
+			<div class="alert alert-fill-danger" role="alert">
+				<i class="mdi mdi-alert-circle"></i>
+				Oh snap! Change a few things up and try submitting again.
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
+			<div class="card card-statistics">
+				<div class="card-body">
+					<div class="clearfix">
+						<div class="float-left">
+							<i class="mdi mdi-cube text-danger icon-lg"></i>
+						</div>
+						<div class="float-right">
+							<p class="mb-0 text-right">Total Revenue</p>
+							<div class="fluid-container">
+								<h3 class="font-weight-medium text-right mb-0">$65,650</h3>
+							</div>
+						</div>
+					</div>
+					<p class="text-muted mt-3 mb-0">
+						<i class="mdi mdi-alert-octagon mr-1" aria-hidden="true"></i>
+						65% lower growth
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
+			<div class="card card-statistics">
+				<div class="card-body">
+					<div class="clearfix">
+						<div class="float-left">
+							<i class="mdi mdi-receipt text-warning icon-lg"></i>
+						</div>
+						<div class="float-right">
+							<p class="mb-0 text-right">Orders</p>
+							<div class="fluid-container">
+								<h3 class="font-weight-medium text-right mb-0">3455</h3>
+							</div>
+						</div>
+					</div>
+					<p class="text-muted mt-3 mb-0">
+						<i class="mdi mdi-bookmark-outline mr-1" aria-hidden="true"></i>
+						Product-wise sales
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
+			<div class="card card-statistics">
+				<div class="card-body">
+					<div class="clearfix">
+						<div class="float-left">
+							<i class="mdi mdi-poll-box text-success icon-lg"></i>
+						</div>
+						<div class="float-right">
+							<p class="mb-0 text-right">Sales</p>
+							<div class="fluid-container">
+								<h3 class="font-weight-medium text-right mb-0">5693</h3>
+							</div>
+						</div>
+					</div>
+					<p class="text-muted mt-3 mb-0">
+						<i class="mdi mdi-calendar mr-1" aria-hidden="true"></i>
+						Weekly Sales
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
+			<div class="card card-statistics">
+				<div class="card-body">
+					<div class="clearfix">
+						<div class="float-left">
+							<i class="mdi mdi-account-box-multiple text-info icon-lg"></i>
+						</div>
+						<div class="float-right">
+							<p class="mb-0 text-right">Employees</p>
+							<div class="fluid-container">
+								<h3 class="font-weight-medium text-right mb-0">246</h3>
+							</div>
+						</div>
+					</div>
+					<p class="text-muted mt-3 mb-0">
+						<i class="mdi mdi-reload mr-1" aria-hidden="true"></i>
+						Product-wise sales
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 grid-margin stretch-card">
+			<div class="card">
+				<div class="card-body">
+					<h4 class="card-title">Basic form</h4>
+					<p class="card-description">
+						Basic form elements
+					</p>
+					<form class="forms-sample">
+						<div class="form-group">
+							<label for="exampleInputName1">Name</label>
+							<input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail3">Email address</label>
+							<input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword4">Password</label>
+							<input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
+						</div>
+						<div class="form-group">
+							<label>File upload</label>
+							<input type="file" name="img[]" class="file-upload-default">
+							<div class="input-group col-xs-12">
+								<input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
+								<span class="input-group-append">
+									<button class="file-upload-browse btn btn-info" type="button">Upload</button>
+								</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="exampleInputCity1">City</label>
+							<input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
+						</div>
+						<div class="form-group">
+							<label for="exampleTextarea1">Textarea</label>
+							<textarea class="form-control" id="exampleTextarea1" rows="2"></textarea>
+						</div>
+						<button type="submit" class="btn btn-success mr-2">Submit</button>
+						<button class="btn btn-light">Cancel</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 d-flex align-items-stretch">
+			<div class="row flex-grow">
+				<div class="col-md-12 grid-margin stretch-card">
+					<div class="card">
+						<div class="card-body">
+							<h4 class="card-title">Select 2</h4>
+							<div class="form-group">
+								<label>Single select box using select 2</label>
+								<select class="js-example-basic-single" style="width:100%">
+									<option value="AL">Alabama</option>
+									<option value="WY">Wyoming</option>
+									<option value="AM">America</option>
+									<option value="CA">Canada</option>
+									<option value="RU">Russia</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label>Multiple select using select 2</label>
+								<select class="js-example-basic-multiple" multiple="multiple" style="width:100%">
+									<option value="AL">Alabama</option>
+									<option value="WY">Wyoming</option>
+									<option value="AM">America</option>
+									<option value="CA">Canada</option>
+									<option value="RU">Russia</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12 grid-margin stretch-card">
+			<div class="card">
+				<div class="card-body">
+					<h4 class="card-title">Bordered table</h4>
+					<p class="card-description">
+						Add class
+						<code>.table-bordered</code>
+					</p>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>
+									#
+								</th>
+								<th>
+									First name
+								</th>
+								<th>
+									Progress
+								</th>
+								<th>
+									Amount
+								</th>
+								<th>
+									Deadline
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									1
+								</td>
+								<td>
+									Herman Beck
+								</td>
+								<td>
+									<div class="progress">
+										<div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+								</td>
+								<td>
+									$ 77.99
+								</td>
+								<td>
+									May 15, 2015
+								</td>
+							</tr>
+							<tr>
+								<td>
+									2
+								</td>
+								<td>
+									Messsy Adam
+								</td>
+								<td>
+									<div class="progress">
+										<div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+								</td>
+								<td>
+									$245.30
+								</td>
+								<td>
+									July 1, 2015
+								</td>
+							</tr>
+							<tr>
+								<td>
+									3
+								</td>
+								<td>
+									John Richards
+								</td>
+								<td>
+									<div class="progress">
+										<div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+								</td>
+								<td>
+									$138.00
+								</td>
+								<td>
+									Apr 12, 2015
+								</td>
+							</tr>
+							<tr>
+								<td>
+									4
+								</td>
+								<td>
+									Peter Meggik
+								</td>
+								<td>
+									<div class="progress">
+										<div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+								</td>
+								<td>
+									$ 77.99
+								</td>
+								<td>
+									May 15, 2015
+								</td>
+							</tr>
+							<tr>
+								<td>
+									5
+								</td>
+								<td>
+									Edward
+								</td>
+								<td>
+									<div class="progress">
+										<div class="progress-bar bg-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+								</td>
+								<td>
+									$ 160.25
+								</td>
+								<td>
+									May 03, 2015
+								</td>
+							</tr>
+							<tr>
+								<td>
+									6
+								</td>
+								<td>
+									John Doe
+								</td>
+								<td>
+									<div class="progress">
+										<div class="progress-bar bg-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+								</td>
+								<td>
+									$ 123.21
+								</td>
+								<td>
+									April 05, 2015
+								</td>
+							</tr>
+							<tr>
+								<td>
+									7
+								</td>
+								<td>
+									Henry Tom
+								</td>
+								<td>
+									<div class="progress">
+										<div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+								</td>
+								<td>
+									$ 150.00
+								</td>
+								<td>
+									June 16, 2015
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-12 grid-margin stretch-card">
+			<div class="card">
+				<div class="card-body">
+					<h4 class="card-title">Striped Table</h4>
+					<p class="card-description">
+						Add class
+						<code>.table-striped</code>
+					</p>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>
+									User
+								</th>
+								<th>
+									First name
+								</th>
+								<th>
+									Progress
+								</th>
+								<th>
+									Amount
+								</th>
+								<th>
+									Deadline
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="py-1">
+									<img src="{{asset('assets/images/faces-clipart/pic-1.png')}}" alt="image">
+								</td>
+								<td>
+									Herman Beck
+								</td>
+								<td>
+									<div class="progress">
+										<div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+								</td>
+								<td>
+									$ 77.99
+								</td>
+								<td>
+									May 15, 2015
+								</td>
+							</tr>
+							<tr>
+								<td class="py-1">
+									<img src="{{asset('assets/images/faces-clipart/pic-2.png')}}" alt="image">
+								</td>
+								<td>
+									Messsy Adam
+								</td>
+								<td>
+									<div class="progress">
+										<div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+								</td>
+								<td>
+									$245.30
+								</td>
+								<td>
+									July 1, 2015
+								</td>
+							</tr>
+							<tr>
+								<td class="py-1">
+									<img src="{{asset('assets/images/faces-clipart/pic-3.png')}}" alt="image">
+								</td>
+								<td>
+									John Richards
+								</td>
+								<td>
+									<div class="progress">
+										<div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+								</td>
+								<td>
+									$138.00
+								</td>
+								<td>
+									Apr 12, 2015
+								</td>
+							</tr>
+							<tr>
+								<td class="py-1">
+									<img src="{{asset('assets/images/faces-clipart/pic-4.png')}}" alt="image">
+								</td>
+								<td>
+									Peter Meggik
+								</td>
+								<td>
+									<div class="progress">
+										<div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+								</td>
+								<td>
+									$ 77.99
+								</td>
+								<td>
+									May 15, 2015
+								</td>
+							</tr>
+							<tr>
+								<td class="py-1">
+									<img src="{{asset('assets/images/faces-clipart/pic-1.png')}}" alt="image">
+								</td>
+								<td>
+									Edward
+								</td>
+								<td>
+									<div class="progress">
+										<div class="progress-bar bg-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+								</td>
+								<td>
+									$ 160.25
+								</td>
+								<td>
+									May 03, 2015
+								</td>
+							</tr>
+							<tr>
+								<td class="py-1">
+									<img src="{{asset('assets/images/faces-clipart/pic-2.png')}}" alt="image">
+								</td>
+								<td>
+									John Doe
+								</td>
+								<td>
+									<div class="progress">
+										<div class="progress-bar bg-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+								</td>
+								<td>
+									$ 123.21
+								</td>
+								<td>
+									April 05, 2015
+								</td>
+							</tr>
+							<tr>
+								<td class="py-1">
+									<img src="{{asset('assets/images/faces-clipart/pic-3.png')}}" alt="image">
+								</td>
+								<td>
+									Henry Tom
+								</td>
+								<td>
+									<div class="progress">
+										<div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+								</td>
+								<td>
+									$ 150.00
+								</td>
+								<td>
+									June 16, 2015
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12 grid-margin">
+			<div class="card">
+				<div class="card-body">
+					<h4 class="card-title">Orders</h4>
+					<div class="table-responsive">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>
+										#
+									</th>
+									<th>
+										First name
+									</th>
+									<th>
+										Progress
+									</th>
+									<th>
+										Amount
+									</th>
+									<th>
+										Sales
+									</th>
+									<th>
+										Deadline
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="font-weight-medium">
+										1
+									</td>
+									<td>
+										Herman Beck
+									</td>
+									<td>
+										<div class="progress">
+											<div class="progress-bar bg-success progress-bar-striped" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+									</td>
+									<td>
+										$ 77.99
+									</td>
+									<td class="text-danger">
+										53.64%
+										<i class="mdi mdi-arrow-down"></i>
+									</td>
+									<td>
+										May 15, 2015
+									</td>
+								</tr>
+								<tr>
+									<td class="font-weight-medium">
+										2
+									</td>
+									<td>
+										Messsy Adam
+									</td>
+									<td>
+										<div class="progress">
+											<div class="progress-bar bg-danger progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+									</td>
+									<td>
+										$245.30
+									</td>
+									<td class="text-success">
+										24.56%
+										<i class="mdi mdi-arrow-up"></i>
+									</td>
+									<td>
+										July 1, 2015
+									</td>
+								</tr>
+								<tr>
+									<td class="font-weight-medium">
+										3
+									</td>
+									<td>
+										John Richards
+									</td>
+									<td>
+										<div class="progress">
+											<div class="progress-bar bg-warning progress-bar-striped" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+									</td>
+									<td>
+										$138.00
+									</td>
+									<td class="text-danger">
+										28.76%
+										<i class="mdi mdi-arrow-down"></i>
+									</td>
+									<td>
+										Apr 12, 2015
+									</td>
+								</tr>
+								<tr>
+									<td class="font-weight-medium">
+										4
+									</td>
+									<td>
+										Peter Meggik
+									</td>
+									<td>
+										<div class="progress">
+											<div class="progress-bar bg-primary progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+									</td>
+									<td>
+										$ 77.99
+									</td>
+									<td class="text-danger">
+										53.45%
+										<i class="mdi mdi-arrow-down"></i>
+									</td>
+									<td>
+										May 15, 2015
+									</td>
+								</tr>
+								<tr>
+									<td class="font-weight-medium">
+										5
+									</td>
+									<td>
+										Edward
+									</td>
+									<td>
+										<div class="progress">
+											<div class="progress-bar bg-danger progress-bar-striped" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+									</td>
+									<td>
+										$ 160.25
+									</td>
+									<td class="text-success">
+										18.32%
+										<i class="mdi mdi-arrow-up"></i>
+									</td>
+									<td>
+										May 03, 2015
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12 grid-margin">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title mb-4">Manage Tickets</h5>
+					<div class="fluid-container">
+						<div class="row ticket-card mt-3 pb-2 border-bottom pb-3 mb-3">
+							<div class="col-md-1">
+								<img class="img-sm rounded-circle mb-4 mb-md-0 d-block mx-md-auto" src="../assets/images/faces/face1.jpg" alt="profile image">
+							</div>
+							<div class="ticket-details col-md-9">
+								<div class="d-flex">
+									<p class="text-dark font-weight-semibold mr-2 mb-0 no-wrap">James :</p>
+									<p class="text-primary mr-1 mb-0">[#23047]</p>
+									<p class="mb-0 ellipsis">Donec rutrum congue leo eget malesuada.</p>
+								</div>
+								<p class="text-gray ellipsis mb-2">Donec rutrum congue leo eget malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim vivamus.
+								</p>
+								<div class="row text-gray d-md-flex d-none">
+									<div class="col-4 d-flex">
+										<small class="mb-0 mr-2 text-muted text-muted">Last responded :</small>
+										<small class="Last-responded mr-2 mb-0 text-muted text-muted">3 hours ago</small>
+									</div>
+									<div class="col-4 d-flex">
+										<small class="mb-0 mr-2 text-muted text-muted">Due in :</small>
+										<small class="Last-responded mr-2 mb-0 text-muted text-muted">2 Days</small>
+									</div>
+								</div>
+							</div>
+							<div class="ticket-actions col-md-2">
+								<div class="btn-group dropdown">
+									<button type="button" class="btn btn-success dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										Manage
+									</button>
+									<div class="dropdown-menu" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -2px, 0px);">
+										<a class="dropdown-item" href="#">
+											<i class="fa fa-reply fa-fw"></i>Quick reply</a>
+										<a class="dropdown-item" href="#">
+											<i class="fa fa-history fa-fw"></i>Another action</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="#">
+											<i class="fa fa-check text-success fa-fw"></i>Resolve Issue</a>
+										<a class="dropdown-item" href="#">
+											<i class="fa fa-times text-danger fa-fw"></i>Close Issue</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row ticket-card mt-3 pb-2 border-bottom pb-3 mb-3">
+							<div class="col-md-1">
+								<img class="img-sm rounded-circle mb-4 mb-md-0 d-block mx-md-auto" src="../assets/images/faces/face2.jpg" alt="profile image">
+							</div>
+							<div class="ticket-details col-md-9">
+								<div class="d-flex">
+									<p class="text-dark font-weight-semibold mr-2 mb-0 no-wrap">Stella :</p>
+									<p class="text-primary mr-1 mb-0">[#23135]</p>
+									<p class="mb-0 ellipsis">Curabitur aliquet quam id dui posuere blandit.</p>
+								</div>
+								<p class="text-gray ellipsis mb-2">Pellentesque in ipsum id orci porta dapibus. Sed porttitor lectus nibh. Curabitur non nulla sit amet nisl.
+								</p>
+								<div class="row text-gray d-md-flex d-none">
+									<div class="col-4 d-flex">
+										<small class="mb-0 mr-2 text-muted">Last responded :</small>
+										<small class="Last-responded mr-2 mb-0 text-muted">3 hours ago</small>
+									</div>
+									<div class="col-4 d-flex">
+										<small class="mb-0 mr-2 text-muted">Due in :</small>
+										<small class="Last-responded mr-2 mb-0 text-muted">2 Days</small>
+									</div>
+								</div>
+							</div>
+							<div class="ticket-actions col-md-2">
+								<div class="btn-group dropdown">
+									<button type="button" class="btn btn-success dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										Manage
+									</button>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="#">
+											<i class="fa fa-reply fa-fw"></i>Quick reply</a>
+										<a class="dropdown-item" href="#">
+											<i class="fa fa-history fa-fw"></i>Another action</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="#">
+											<i class="fa fa-check text-success fa-fw"></i>Resolve Issue</a>
+										<a class="dropdown-item" href="#">
+											<i class="fa fa-times text-danger fa-fw"></i>Close Issue</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row ticket-card mt-3">
+							<div class="col-md-1">
+								<img class="img-sm rounded-circle mb-4 mb-md-0 d-block mx-md-auto" src="../assets/images/faces/face3.jpg" alt="profile image">
+							</div>
+							<div class="ticket-details col-md-9">
+								<div class="d-flex">
+									<p class="text-dark font-weight-semibold mr-2 mb-0 no-wrap">John Doe :</p>
+									<p class="text-primary mr-1 mb-0">[#23246]</p>
+									<p class="mb-0 ellipsis">Mauris blandit aliquet elit, eget tincidunt nibh pulvinar.</p>
+								</div>
+								<p class="text-gray ellipsis mb-2">Nulla quis lorem ut libero malesuada feugiat. Proin eget tortor risus. Lorem ipsum dolor sit amet.</p>
+								<div class="row text-gray d-md-flex d-none">
+									<div class="col-4 d-flex">
+										<small class="mb-0 mr-2 text-muted">Last responded :</small>
+										<small class="Last-responded mr-2 mb-0 text-muted">3 hours ago</small>
+									</div>
+									<div class="col-4 d-flex">
+										<small class="mb-0 mr-2 text-muted">Due in :</small>
+										<small class="Last-responded mr-2 mb-0 text-muted">2 Days</small>
+									</div>
+								</div>
+							</div>
+							<div class="ticket-actions col-md-2">
+								<div class="btn-group dropdown">
+									<button type="button" class="btn btn-success dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										Manage
+									</button>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="#">
+											<i class="fa fa-reply fa-fw"></i>Quick reply</a>
+										<a class="dropdown-item" href="#">
+											<i class="fa fa-history fa-fw"></i>Another action</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="#">
+											<i class="fa fa-check text-success fa-fw"></i>Resolve Issue</a>
+										<a class="dropdown-item" href="#">
+											<i class="fa fa-times text-danger fa-fw"></i>Close Issue</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 grid-margin stretch-card">
+			<div class="card">
+				<div class="card-body">
+					<h4 class="card-title">Checkbox Controls</h4>
+					<p class="card-description">Checkbox and radio controls</p>
+					<form class="forms-sample">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="form-check">
+										<label class="form-check-label">
+											<input type="checkbox" class="form-check-input">
+											Default
+											<i class="input-helper"></i>
+										</label>
+									</div>
+									<div class="form-check">
+										<label class="form-check-label">
+											<input type="checkbox" class="form-check-input" checked="">
+											Checked
+											<i class="input-helper"></i>
+										</label>
+									</div>
+									<div class="form-check">
+										<label class="form-check-label">
+											<input type="checkbox" class="form-check-input" disabled="">
+											Disabled
+											<i class="input-helper"></i>
+										</label>
+									</div>
+									<div class="form-check">
+										<label class="form-check-label">
+											<input type="checkbox" class="form-check-input" disabled="" checked="">
+											Disabled checked
+											<i class="input-helper"></i>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="form-radio">
+										<label class="form-check-label">
+											<input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="" checked="">
+											Option one
+											<i class="input-helper"></i>
+										</label>
+									</div>
+									<div class="form-radio">
+										<label class="form-check-label">
+											<input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+											Option two
+											<i class="input-helper"></i>
+										</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="form-radio disabled">
+										<label class="form-check-label">
+											<input type="radio" class="form-check-input" name="optionsRadios2" id="optionsRadios3" value="option3" disabled="">
+											Option three is disabled
+											<i class="input-helper"></i>
+										</label>
+									</div>
+									<div class="form-radio disabled">
+										<label class="form-check-label">
+											<input type="radio" class="form-check-input" name="optionsRadio2" id="optionsRadios4" value="option4" disabled="" checked="">
+											Option four is selected and disabled
+											<i class="input-helper"></i>
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 grid-margin stretch-card">
+			<div class="card">
+				<div class="card-body">
+					<h4 class="card-title">Checkbox Flat Controls</h4>
+					<p class="card-description">Checkbox and radio controls with flat design</p>
+					<form class="forms-sample">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="form-check form-check-flat">
+										<label class="form-check-label">
+											<input type="checkbox" class="form-check-input">
+											Default
+											<i class="input-helper"></i>
+										</label>
+									</div>
+									<div class="form-check form-check-flat">
+										<label class="form-check-label">
+											<input type="checkbox" class="form-check-input" checked="">
+											Checked
+											<i class="input-helper"></i>
+										</label>
+									</div>
+									<div class="form-check form-check-flat">
+										<label class="form-check-label">
+											<input type="checkbox" class="form-check-input" disabled="">
+											Disabled
+											<i class="input-helper"></i>
+										</label>
+									</div>
+									<div class="form-check form-check-flat">
+										<label class="form-check-label">
+											<input type="checkbox" class="form-check-input" disabled="" checked="">
+											Disabled checked
+											<i class="input-helper"></i>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="form-radio form-radio-flat">
+										<label class="form-check-label">
+											<input type="radio" class="form-check-input" name="flatRadios" id="flatRadios1" value="" checked="">
+											Option one
+											<i class="input-helper"></i>
+										</label>
+									</div>
+									<div class="form-radio form-radio-flat">
+										<label class="form-check-label">
+											<input type="radio" class="form-check-input" name="flatRadios" id="flatRadios2" value="option2">
+											Option two
+											<i class="input-helper"></i>
+										</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="form-radio form-radio-flat disabled">
+										<label class="form-check-label">
+											<input type="radio" class="form-check-input" name="flatRadios2" id="flatRadios3" value="option3" disabled="">
+											Option three is disabled
+											<i class="input-helper"></i>
+										</label>
+									</div>
+									<div class="form-radio form-radio-flat disabled">
+										<label class="form-check-label">
+											<input type="radio" class="form-check-input" name="flatRadios2" id="flatRadios4" value="option4" disabled="" checked="">
+											Option four is selected and disabled
+											<i class="input-helper"></i>
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 grid-margin">
+			<div class="card">
+				<div class="card-body">
+					<h4 class="card-title">Horizontal Two column</h4>
+					<form class="form-sample">
+						<p class="card-description">
+							Personal info
+						</p>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group row">
+									<label class="col-sm-3 col-form-label">First Name</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group row">
+									<label class="col-sm-3 col-form-label">Last Name</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group row">
+									<label class="col-sm-3 col-form-label">Gender</label>
+									<div class="col-sm-9">
+										<select class="form-control">
+											<option>Male</option>
+											<option>Female</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group row">
+									<label class="col-sm-3 col-form-label">Date of Birth</label>
+									<div class="col-sm-9">
+										<input class="form-control" placeholder="dd/mm/yyyy">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group row">
+									<label class="col-sm-3 col-form-label">Category</label>
+									<div class="col-sm-9">
+										<select class="form-control">
+											<option>Category1</option>
+											<option>Category2</option>
+											<option>Category3</option>
+											<option>Category4</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group row">
+									<label class="col-sm-3 col-form-label">Membership</label>
+									<div class="col-sm-4">
+										<div class="form-radio">
+											<label class="form-check-label">
+												<input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios1" value="" checked="">
+												Free
+												<i class="input-helper"></i>
+											</label>
+										</div>
+									</div>
+									<div class="col-sm-5">
+										<div class="form-radio">
+											<label class="form-check-label">
+												<input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios2" value="option2">
+												Professional
+												<i class="input-helper"></i>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<p class="card-description">
+							Address
+						</p>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group row">
+									<label class="col-sm-3 col-form-label">Address 1</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group row">
+									<label class="col-sm-3 col-form-label">State</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group row">
+									<label class="col-sm-3 col-form-label">Address 2</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group row">
+									<label class="col-sm-3 col-form-label">Postcode</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group row">
+									<label class="col-sm-3 col-form-label">City</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group row">
+									<label class="col-sm-3 col-form-label">Country</label>
+									<div class="col-sm-9">
+										<select class="form-control">
+											<option>America</option>
+											<option>Italy</option>
+											<option>Russia</option>
+											<option>Britain</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-12">
+			<div class="card">
+				<div class="card-body pb-0">
+					<h4 class="card-title mb-0">Icheck</h4>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 grid-margin grid-margin-lg-0">
+						<div class="card-body">
+							<p class="card-description">Minimal skin</p>
+							<div class="icheck">
+								<div class="icheckbox_minimal-blue" style="position: relative;"><input tabindex="5" type="checkbox" id="minimal-checkbox-1" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="minimal-checkbox-1">Checkbox 1</label>
+							</div>
+							<div class="icheck">
+								<div class="icheckbox_minimal-blue checked hover" style="position: relative;"><input tabindex="6" type="checkbox" id="minimal-checkbox-2" checked="" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="minimal-checkbox-2" class="hover">Checkbox 2</label>
+							</div>
+							<div class="icheck">
+								<div class="icheckbox_minimal-blue disabled" style="position: relative;"><input type="checkbox" id="minimal-checkbox-disabled" disabled="" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="minimal-checkbox-disabled">Disabled</label>
+							</div>
+							<div class="icheck">
+								<div class="icheckbox_minimal-blue checked disabled" style="position: relative;"><input type="checkbox" id="minimal-checkbox-disabled-checked" checked="" disabled="" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="minimal-checkbox-disabled-checked">Disabled &amp; checked</label>
+							</div>
+							<div class="icheck">
+								<div class="iradio_minimal" style="position: relative;"><input tabindex="7" type="radio" id="minimal-radio-1" name="minimal-radio" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="minimal-radio-1">Radio button 1</label>
+							</div>
+							<div class="icheck">
+								<div class="iradio_minimal" style="position: relative;"><input tabindex="8" type="radio" id="minimal-radio-2" name="minimal-radio" checked="" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="minimal-radio-2">Radio button 2</label>
+							</div>
+							<div class="icheck">
+								<div class="iradio_minimal disabled" style="position: relative;"><input type="radio" id="minimal-radio-disabled" disabled="" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="minimal-radio-disabled">Disabled</label>
+							</div>
+							<div class="icheck">
+								<div class="iradio_minimal checked disabled" style="position: relative;"><input type="radio" id="minimal-radio-disabled-checked" checked="" disabled="" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="minimal-radio-disabled-checked">Disabled &amp; checked</label>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 grid-margin grid-margin-lg-0">
+						<div class="card-body">
+							<p class="card-description">Square skin</p>
+							<div class="icheck-square">
+								<div class="icheckbox_square-blue" style="position: relative;"><input tabindex="5" type="checkbox" id="square-checkbox-1" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="square-checkbox-1">Checkbox 1</label>
+							</div>
+							<div class="icheck-square">
+								<div class="icheckbox_square-blue checked" style="position: relative;"><input tabindex="6" type="checkbox" id="square-checkbox-2" checked="" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="square-checkbox-2">Checkbox 2</label>
+							</div>
+							<div class="icheck-square">
+								<div class="icheckbox_square-blue disabled" style="position: relative;"><input type="checkbox" id="square-checkbox-disabled" disabled="" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="square-checkbox-disabled">Disabled</label>
+							</div>
+							<div class="icheck-square">
+								<div class="icheckbox_square-blue checked disabled" style="position: relative;"><input type="checkbox" id="square-checkbox-disabled-checked" checked="" disabled="" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="square-checkbox-disabled-checked">Disabled &amp; checked</label>
+							</div>
+							<div class="icheck-square">
+								<div class="iradio_square" style="position: relative;"><input tabindex="7" type="radio" id="square-radio-1" name="minimal-radio" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="square-radio-1" class="">Radio button 1</label>
+							</div>
+							<div class="icheck-square">
+								<div class="iradio_square" style="position: relative;"><input tabindex="8" type="radio" id="square-radio-2" name="minimal-radio" checked="" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="square-radio-2">Radio button 2</label>
+							</div>
+							<div class="icheck-square">
+								<div class="iradio_square disabled" style="position: relative;"><input type="radio" id="square-radio-disabled" disabled="" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="square-radio-disabled">Disabled</label>
+							</div>
+							<div class="icheck-square">
+								<div class="iradio_square checked disabled" style="position: relative;"><input type="radio" id="square-radio-disabled-checked" checked="" disabled="" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="square-radio-disabled-checked">Disabled &amp; checked</label>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 grid-margin grid-margin-lg-0">
+						<div class="card-body">
+							<p class="card-description">Flat skin</p>
+							<div class="icheck-flat">
+								<div class="icheckbox_flat-blue" style="position: relative;"><input tabindex="5" type="checkbox" id="flat-checkbox-1" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="flat-checkbox-1">Checkbox 1</label>
+							</div>
+							<div class="icheck-flat">
+								<div class="icheckbox_flat-blue checked" style="position: relative;"><input tabindex="6" type="checkbox" id="flat-checkbox-2" checked="" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="flat-checkbox-2">Checkbox 2</label>
+							</div>
+							<div class="icheck-flat">
+								<div class="icheckbox_flat-blue disabled" style="position: relative;"><input type="checkbox" id="flat-checkbox-disabled" disabled="" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="flat-checkbox-disabled">Disabled</label>
+							</div>
+							<div class="icheck-flat">
+								<div class="icheckbox_flat-blue checked disabled" style="position: relative;"><input type="checkbox" id="flat-checkbox-disabled-checked" checked="" disabled="" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="flat-checkbox-disabled-checked">Disabled &amp; checked</label>
+							</div>
+							<div class="icheck-flat">
+								<div class="iradio_flat" style="position: relative;"><input tabindex="7" type="radio" id="flat-radio-1" name="minimal-radio" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="flat-radio-1">Radio button 1</label>
+							</div>
+							<div class="icheck-flat">
+								<div class="iradio_flat" style="position: relative;"><input tabindex="8" type="radio" id="flat-radio-2" name="minimal-radio" checked="" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="flat-radio-2">Radio button 2</label>
+							</div>
+							<div class="icheck-flat">
+								<div class="iradio_flat disabled" style="position: relative;"><input type="radio" id="flat-radio-disabled" disabled="" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="flat-radio-disabled">Disabled</label>
+							</div>
+							<div class="icheck-flat">
+								<div class="iradio_flat checked disabled" style="position: relative;"><input type="radio" id="flat-radio-disabled-checked" checked="" disabled="" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+								<label for="flat-radio-disabled-checked">Disabled &amp; checked</label>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="card-body">
+							<p class="card-description">Line skin</p>
+							<div class="icheck-line">
+								<div class="icheckbox_line-blue"><input tabindex="5" type="checkbox" id="line-checkbox-1" style="position: absolute; opacity: 0;"><div class="icheck_line-icon"></div>Checkbox 1<ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+							</div>
+							<div class="icheck-line">
+								<div class="icheckbox_line-blue checked"><input tabindex="6" type="checkbox" id="line-checkbox-2" checked="" style="position: absolute; opacity: 0;"><div class="icheck_line-icon"></div>Checkbox 2<ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+							</div>
+							<div class="icheck-line">
+								<div class="icheckbox_line-blue disabled"><input type="checkbox" id="line-checkbox-disabled" disabled="" style="position: absolute; opacity: 0;"><div class="icheck_line-icon"></div>Disabled<ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+							</div>
+							<div class="icheck-line">
+								<div class="icheckbox_line-blue checked disabled"><input type="checkbox" id="line-checkbox-disabled-checked" checked="" disabled="" style="position: absolute; opacity: 0;"><div class="icheck_line-icon"></div>Disabled &amp; checked<ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+							</div>
+							<div class="icheck-line">
+								<div class="iradio_line"><input tabindex="7" type="radio" id="line-radio-1" name="minimal-radio" style="position: absolute; opacity: 0;"><div class="icheck_line-icon"></div>Radio button 1<ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+							</div>
+							<div class="icheck-line">
+								<div class="iradio_line checked"><input tabindex="8" type="radio" id="line-radio-2" name="minimal-radio" checked="" style="position: absolute; opacity: 0;"><div class="icheck_line-icon"></div>Radio button 2<ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+							</div>
+							<div class="icheck-line disabled">
+								<div class="iradio_line disabled"><input type="radio" id="line-radio-disabled" disabled="" style="position: absolute; opacity: 0;"><div class="icheck_line-icon"></div>Disabled<ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+							</div>
+							<div class="icheck-line disabled">
+								<div class="iradio_line checked disabled"><input type="radio" id="line-radio-disabled-checked" checked="" disabled="" style="position: absolute; opacity: 0;"><div class="icheck_line-icon"></div>Disabled &amp; checked<ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row profile-page">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-body">
+					<div class="profile-header text-white">
+						<div class="d-flex justify-content-center justify-content-md-between mx-4 mx-xl-5 px-xl-5 flex-wrap">
+							<div class="profile-info d-flex align-items-center justify-content-center flex-wrap mr-sm-3">
+								<img class="rounded-circle img-lg mb-3 mb-sm-0" src="../../../assets/images/faces/profile/profile.jpg" alt="profile image">
+								<div class="wrapper pl-sm-4">
+									<p class="profile-user-name text-center text-sm-left">Richard V.Welsh (UI/UX Designer)</p>
+									<div class="wrapper d-flex align-items-center justify-content-center flex-wrap">
+										<p class="profile-user-designation text-center text-md-left my-2 my-md-0">User Experience Specialist</p>
+										<div class="br-wrapper br-theme-css-stars">
+											<select id="example-css" name="rating" autocomplete="off" style="display: none;">
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+											</select>
+											<div class="br-widget">
+												<a href="#" data-rating-value="1" data-rating-text="1" class="br-selected br-current"></a>
+												<a href="#" data-rating-value="2" data-rating-text="2"></a>
+												<a href="#" data-rating-value="3" data-rating-text="3"></a>
+												<a href="#" data-rating-value="4" data-rating-text="4"></a>
+												<a href="#" data-rating-value="5" data-rating-text="5"></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="details mt-2 mt-md-0">
+								<div class="detail-col pr-3 mr-3">
+									<p>Projects</p>
+									<p>130</p>
+								</div>
+								<div class="detail-col">
+									<p>Projects</p>
+									<p>130</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="profile-body">
+						<ul class="nav tab-switch" role="tablist">
+							<li class="nav-item">
+								<a class="nav-link active" id="user-profile-info-tab" data-toggle="pill" href="#user-profile-info" role="tab" aria-controls="user-profile-info" aria-selected="true">Profile</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" id="user-profile-activity-tab" data-toggle="pill" href="#user-profile-activity" role="tab" aria-controls="user-profile-activity" aria-selected="false">Activity</a>
+							</li>
+						</ul>
+						<div class="row">
+							<div class="col-md-9">
+								<div class="tab-content tab-body" id="profile-log-switch">
+									<div class="tab-pane fade pr-3 active show" id="user-profile-info" role="tabpanel" aria-labelledby="user-profile-info-tab">
+										<div class="table-responsive">
+											<table class="table table-borderless w-100 mt-4">
+												<tbody>
+													<tr>
+														<td>
+															<strong>Full Name :</strong>
+															Johnathan Deo</td>
+														<td>
+															<strong>Website :</strong>
+															staradmin.com</td>
+													</tr>
+													<tr>
+														<td>
+															<strong>Location :</strong>
+															USA</td>
+														<td>
+															<strong>Email :</strong>
+															Richard@staradmin.com</td>
+													</tr>
+													<tr>
+														<td>
+															<strong>Languages :</strong>
+															English, German, Spanish.</td>
+														<td>
+															<strong>Phone :</strong>
+															+73646 4563</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="row mt-5 pb-4 border-bottom">
+											<div class="col-md-6">
+												<div class="d-flex align-items-start pb-3 border-bottom">
+													<img src="../../../assets/images/samples/profile_page/logo/01.png" alt="brand logo">
+													<div class="wrapper pl-4">
+														<p class="font-weight-bold mb-0">Photoshop</p>
+														<small>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie</small>
+													</div>
+												</div>
+												<div class="d-flex align-items-start py-3 border-bottom">
+													<img src="../../../assets/images/samples/profile_page/logo/02.png" alt="brand logo">
+													<div class="wrapper pl-4">
+														<p class="font-weight-bold mb-0">Photoshop</p>
+														<small>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie</small>
+													</div>
+												</div>
+												<div class="d-flex align-items-start py-3">
+													<img src="../../../assets/images/samples/profile_page/logo/03.png" alt="brand logo">
+													<div class="wrapper pl-4">
+														<p class="font-weight-bold mb-0">Photoshop</p>
+														<small>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie</small>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="row">
+													<div class="col-12">
+														<img class="img-fluid rounded" src="../../../assets/images/samples/profile_page/banner_01.jpg" alt="banner image">
+													</div>
+													<div class="col-12 mt-3">
+														<img class="img-fluid rounded" src="../../../assets/images/samples/profile_page/banner_02.jpg" alt="banner image">
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-12 mt-5">
+												<h5 class="mb-5">Stages</h5>
+												<div class="stage-wrapper pl-4">
+													<div class="stages border-left pl-5 pb-4">
+														<div class="btn btn-icons btn-rounded stage-badge btn-inverse-success">
+															<i class="mdi mdi-texture"></i>
+														</div>
+														<div class="d-flex align-items-center mb-2 justify-content-between flex-wrap">
+															<h5 class="mb-0 mr-2">Task Added</h5>
+															<small class="text-muted">28 mins ago</small>
+														</div>
+														<p>Admin is a full featured, multipurpose, premium bootstrap admin template built with Bootstrap 4 Framework</p>
+													</div>
+													<div class="stages border-left pl-5 pb-4">
+														<div class="btn btn-icons btn-rounded stage-badge btn-inverse-danger">
+															<i class="mdi mdi-download"></i>
+														</div>
+														<div class="d-flex align-items-center mb-2 justify-content-between flex-wrap">
+															<h5 class="mb-0 mr-2">Download Completed</h5>
+															<small class="text-muted">45 mins ago</small>
+														</div>
+														<p>one of the best admin panel templates. With this bootstrap admin template, you can quick start your project.</p>
+														<div class="file-icon-wrapper">
+															<div class="btn btn-outline-danger file-icon mr-3">
+																<i class="mdi mdi-file-pdf"></i>
+															</div>
+															<div class="btn btn-outline-primary file-icon">
+																<i class="mdi mdi-file-word"></i>
+															</div>
+														</div>
+													</div>
+													<div class="stages pl-5 pb-4">
+														<div class="btn btn-icons btn-rounded stage-badge btn-inverse-primary">
+															<i class="mdi mdi-checkbox-marked-circle-outline"></i>
+														</div>
+														<div class="d-flex align-items-center mb-2 justify-content-between flex-wrap">
+															<h5 class="mb-0 mr-2">New Task Completed</h5>
+															<small class="text-muted">55 mins ago</small>
+														</div>
+														<p>Admin dashboard works seamlessly on all major web browsers and devices.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane fade" id="user-profile-activity" role="tabpanel" aria-labelledby="user-profile-activity-tab">
+										<div class="horizontal-timeline">
+											<section class="time-frame">
+												<h4 class="section-time-frame">Today</h4>
+												<div class="event">
+													<p class="event-text">We’re big on real names around here, so people know who’s who</p>
+													<div class="event-alert">You have added task #26 Successfully to the project “Agile CRM”</div>
+													<div class="event-info">New Dashboard Design - 9:24 PM</div>
+												</div>
+												<div class="event">
+													<p class="event-text">Admin is a full featured, multipurpose, premium bootstrap admin template built with Bootstrap 4 Framework</p>
+													<div class="tumbnail-views">
+														<div class="thumbnail">
+															<img src="../../../assets/images/samples/profile_page/thumbnail/01.jpg" alt="thumbnail">
+														</div>
+														<div class="thumbnail">
+															<img src="../../../assets/images/samples/profile_page/thumbnail/02.jpg" alt="thumbnail">
+														</div>
+														<div class="thumbnail">
+															<img src="../../../assets/images/samples/profile_page/thumbnail/03.jpg" alt="thumbnail">
+														</div>
+														<div class="thumbnail">
+															<img src="../../../assets/images/samples/profile_page/thumbnail/04.jpg" alt="thumbnail">
+														</div>
+														<div class="thumbnail">
+															<img src="../../../assets/images/samples/profile_page/thumbnail/05.jpg" alt="thumbnail">
+														</div>
+														<div class="thumbnail">
+															<img src="../../../assets/images/samples/profile_page/thumbnail/06.jpg" alt="thumbnail">
+														</div>
+													</div>
+													<div class="event-info">New Dashboard Design - 9:24 PM</div>
+												</div>
+												<div class="event">
+													<p class="event-text">It is a fully responsive bootstrap admin template / bootstrap admin dashboard</p>
+													<div class="event-alert">You have added task #26 Successfully to the project “Agile CRM”</div>
+													<div class="event-info">New Dashboard Design - 9:24 PM</div>
+												</div>
+											</section>
+											<section class="time-frame">
+												<h4 class="section-time-frame">Yesterday</h4>
+												<div class="event">
+													<p class="event-text">Night fill together itself. Midst. Beginning. Behold living god had.</p>
+													<div class="event-alert">You have added task #26 Successfully to the project “Agile CRM”</div>
+													<div class="event-info">New Dashboard Design - 11:24 PM</div>
+												</div>
+												<div class="event">
+													<p class="event-text">Why waste time starting from scratch; try out our admin dashboard template</p>
+													<div class="event-info">New Dashboard Design - 11:30 PM</div>
+												</div>
+											</section>
+											<section class="time-frame">
+												<h4 class="section-time-frame">30 March</h4>
+												<div class="event">
+													<p class="event-text">Gerald Vaughn changed the status to QA on MA-86 - Retargeting Ads</p>
+													<div class="tumbnail-views">
+														<div class="thumbnail">
+															<img src="../../../assets/images/samples/profile_page/thumbnail/07.jpg" alt="thumbnail">
+														</div>
+														<div class="thumbnail">
+															<img src="../../../assets/images/samples/profile_page/thumbnail/08.jpg" alt="thumbnail">
+														</div>
+														<div class="thumbnail">
+															<img src="../../../assets/images/samples/profile_page/thumbnail/09.jpg" alt="thumbnail">
+														</div>
+														<div class="thumbnail">
+															<img src="../../../assets/images/samples/profile_page/thumbnail/10.jpg" alt="thumbnail">
+														</div>
+														<div class="thumbnail">
+															<img src="../../../assets/images/samples/profile_page/thumbnail/11.jpg" alt="thumbnail">
+														</div>
+														<div class="thumbnail">
+															<img src="../../../assets/images/samples/profile_page/thumbnail/12.jpg" alt="thumbnail">
+														</div>
+													</div>
+													<div class="event-alert">You have added task #26 Successfully to the project “Agile CRM”</div>
+													<div class="event-info">New Dashboard Design - 11:45 PM</div>
+												</div>
+											</section>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<h5 class="my-4">Who to follow</h5>
+								<div class="new-accounts">
+									<ul class="chats ps">
+										<li class="chat-persons">
+											<a href="#">
+												<span class="pro-pic">
+													<img src="../../../assets/images/faces/face2.jpg" alt="profile image">
+												</span>
+												<div class="user">
+													<p class="u-name">Marina Michel</p>
+													<p class="u-designation">Business Development</p>
+												</div>
+											</a>
+										</li>
+										<li class="chat-persons">
+											<a href="#">
+												<span class="pro-pic">
+													<img src="../../../assets/images/faces/face3.jpg" alt="profile image">
+												</span>
+												<div class="user">
+													<p class="u-name">Stella Johnson</p>
+													<p class="u-designation">SEO Expert</p>
+												</div>
+											</a>
+										</li>
+										<li class="chat-persons">
+											<a href="#">
+												<span class="pro-pic">
+													<img src="../../../assets/images/faces/face4.jpg" alt="profile image">
+												</span>
+												<div class="user">
+													<p class="u-name">Peter Joo</p>
+													<p class="u-designation">UI/UX designer</p>
+												</div>
+											</a>
+										</li>
+										<div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+											<div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+										</div>
+										<div class="ps__rail-y" style="top: 0px; right: 0px;">
+											<div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+										</div>
+									</ul>
+								</div>
+								<h5 class="my-4">Pending</h5>
+								<div class="new-accounts">
+									<ul class="chats">
+										<li class="chat-persons">
+											<a href="#">
+												<span class="pro-pic">
+													<img src="../../../assets/images/faces/face5.jpg" alt="profile image">
+												</span>
+												<div class="user">
+													<p class="u-name">Marina Michel</p>
+													<p class="u-designation">Business Development</p>
+													<span class="d-flex align-items-center mt-2">
+														<span class="btn btn-xs btn-rounded btn-outline-light mr-2">Buyer</span>
+														<span class="btn btn-xs btn-rounded btn-outline-primary">Lead</span>
+													</span>
+												</div>
+											</a>
+										</li>
+										<li class="chat-persons">
+											<a href="#">
+												<span class="pro-pic">
+													<img src="../../../assets/images/faces/face6.jpg" alt="profile image">
+												</span>
+												<div class="user">
+													<p class="u-name">Stella Johnson</p>
+													<p class="u-designation">SEO Expert</p>
+													<span class="d-flex align-items-center mt-2">
+														<span class="btn btn-xs btn-rounded btn-outline-light mr-2">Buyer</span>
+														<span class="btn btn-xs btn-rounded btn-outline-primary">Lead</span>
+													</span>
+												</div>
+											</a>
+										</li>
+										<li class="chat-persons">
+											<a href="#">
+												<span class="pro-pic">
+													<img src="../../../assets/images/faces/face7.jpg" alt="profile image">
+												</span>
+												<div class="user">
+													<p class="u-name">Peter Joo</p>
+													<p class="u-designation">UI/UX designer</p>
+													<span class="d-flex align-items-center mt-2">
+														<span class="btn btn-xs btn-rounded btn-outline-light mr-2">Buyer</span>
+														<span class="btn btn-xs btn-rounded btn-outline-primary">Lead</span>
+													</span>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

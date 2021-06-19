@@ -1,0 +1,130 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Detail de l'ordinateur
+	{{datas}}
+{% endblock %}
+
+{% block body %}
+	<div class="row">
+		<div class="col-12 grid-margin">
+			<div class="card">
+				<div class="card-body">
+					<h3 class="card-title mb-4 text-uppercase">
+						{{datas}}</h3>
+					<div class="fluid-container"></div>
+				</div>
+			</div>
+		</div>
+		<div class="col-4 grid-margin">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title mb-4 text-uppercase">Detail de l'ordinateur</h5>
+					<div class="forms-sample">
+						<div class="form-group row">
+							<label class="col-sm-4 col-form-label">Type</label>
+							<div class="col-sm-8">
+								<p class="card-text text-justify">{{datas.type}}</p>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-4 col-form-label">Modele</label>
+							<div class="col-sm-8">
+								<p class="card-text text-justify">{{datas.modele}}</p>
+							</div>
+						</div>
+						<hr>
+						<div class="form-group row">
+							<label class="col-sm-4 col-form-label">Processeur</label>
+							<div class="col-sm-8">
+								<p class="card-text text-justify">{{datas.processeur}}
+									-
+									{{datas.frequence}}
+									GHz</p>
+							</div>
+						</div>
+						<hr>
+						<div class="form-group row">
+							<label class="col-sm-4 col-form-label">RAM</label>
+							<div class="col-sm-8">
+								<p class="card-text text-justify">
+									{% for item in datas.typeRam %}
+										{{item}}
+										-
+									{% endfor %}
+									{{datas.ram}}
+									Go
+								</p>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-4 col-form-label">Disque</label>
+							<div class="col-sm-8">
+								<p class="card-text text-justify">
+									{{datas.disque}}
+									Go
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-8 grid-margin">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title mb-4 text-uppercase">Informations supplementaires</h5>
+					<div class="row">
+						<div class="col-md-6 grid-margin stretch-card">
+							<div class="card">
+								<div class="card-body">
+									<h4 class="card-title">Interventions</h4>
+									<ul class="bullet-line-list">
+										{% for item in datas.interventions|reverse|slice(0, 5) %}
+											<li>
+												<h6>
+													<a href="{{path('app_intervention_detail', {'id': item.id})}}">{{item}}</a>
+												</h6>
+												<p>
+													{% for panne in item.pannes %}
+														{{panne}}
+														-
+													{% endfor %}
+												</p>
+												<p class="text-muted">
+													{% for technicien in item.techniciens %}
+														<i class="mdi mdi-account"></i>
+														<a href="{{path('app_technicien_detail', {'id': technicien.id})}}" class="text-success">{{technicien}}</a>
+													</br>
+												{% endfor %}
+											</li>
+										{% endfor %}
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 grid-margin stretch-card">
+							<div class="card">
+								<div class="card-body">
+									<p class="text-gray">Fiches</p>
+									<ul class="bullet-line-list pb-3">
+										{% for fiche in datas.fiches|reverse|slice(0, 5) %}
+											<li>
+												<div class="d-flex align-items-center justify-content-between">
+													<div class="d-flex">
+														<div class="ml-3">
+															<h6 class="mb-0">{{fiche}}</h6>
+														</div>
+													</div>
+												</div>
+											</li>
+										{% endfor %}
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des ordinateurs
+{% endblock %}
+
+{% block body %}
+
+	<div class="row">
+		<div class="col-12 grid-margin">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title mb-4">Liste des ordinateurs</h5>
+					<div class="fluid-container">
+						{% if datas is defined %}
+							<div class="row">
+								<div class="col-md-12 grid-margin">
+									<div class="card">
+										<div class="card-body">
+											<table class="table table-striped">
+												<thead>
+													<tr>
+														<th>
+															#id
+														</th>
+														<th>
+															Libelle
+														</th>
+														<th>
+															Agent
+														</th>
+														<th>
+															Actions
+														</th>
+													</tr>
+												</thead>
+												<tbody>
+													{% for item in datas %}
+														<tr>
+															<td>
+																{{item.id}}
+															</td>
+															<td>
+																{{item}}
+															</td>
+															<td>
+																{{item.agent}}
+															</td>
+															<td>
+																<a href="{{path('app_ordinateur_detail', {'id': item.id})}}" class="btn btn-primary">+</a>
+																-
+																<a href="#" class="btn btn-danger">-</a>
+															</td>
+														</tr>
+													{% endfor %}
+												</tbody>
+											</table>
+
+										</div>
+									</div>
+								</div>
+							{% else %}
+								<div class="alert alert-primary my-auto">
+									<p class="text-uppercase">Base de donnée
+										<strong>vide</strong>
+										ou donnée(s)
+										<strong>non reçue</strong>
+										!</p>
+								</div>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endblock %}

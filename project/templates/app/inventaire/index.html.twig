@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello InventaireController!{% endblock %}
+
+{% block body %}
+ <div class="row">
+      <div class="col-12 stretch-card">
+         <div class="card">
+            <div class="card-body">
+               {{ form_start(form, {'attr': {'class': 'forms-sample'}}) }}
+               {{ form_row(form.nom) }}
+               {{ form_row(form.prenoms) }}
+               {{ form_row(form.contacts) }}
+               {{ form_row(form.emailPerso) }}
+               {{ form_row(form.emailPro) }}
+               {{ form_row(form.service) }}
+               <div class="form-group row">
+                  <legend class="col-form-label col-sm-3 required">Ordinateurs</legend>
+                  <div class="col-sm-9 item">
+                     <div 
+                     id="ordinateur" 
+                     data-prototype="{{ include("app/inventaire/_ordi.html.twig", {form: form.ordinateurs.vars.prototype})|e("html_attr") }}" 
+                     data-index="{{ form.ordinateurs|length > 0 ? form.ordinateurs|last.vars.name + 1 : 0}}">
+                        {% for ordinateur in form.ordinateurs %}
+                           {{ include("app/inventaire/_ordi.html.twig", {form: ordinateur}) }}
+                        {% endfor %}
+                     </div>
+                     <div class="form-group">
+                        <button type="button" id="new_ordinateur" class="btn btn-primary btn-new" data-collection="#ordinateur">New Ordinateur</button> 
+                     </div>
+                  </div>
+               </div>
+               <div class="form-group row">
+                  <legend class="col-form-label col-sm-3 required">Peripheriques</legend>
+                  <div class="col-sm-9 item">
+                     <div 
+                     id="peripherique" 
+                     data-prototype="{{ include("app/inventaire/_periph.html.twig", {form: form.peripheriques.vars.prototype})|e("html_attr") }}" 
+                     data-index="{{ form.peripheriques|length > 0 ? form.peripheriques|last.vars.name + 1 : 0}}">
+                        {% for peripherique in form.peripheriques %}
+                           {{ include("app/inventaire/_periph.html.twig", {form: peripherique}) }}
+                        {% endfor %}
+                     </div>
+                     <div class="form-group">
+                        <button type="button" id="new_peripherique" class="btn btn-primary btn-new" data-collection="#peripherique">New Peripherique</button> 
+                     </div>
+                  </div>
+               </div>
+               {{ form_widget(form._token) }}
+               <div class="form-group row"> 
+                  <div class="col-6">
+                     <button type="submit" class="btn btn-primary">Enregistrer</button> 
+                  </div>
+                  <div class="col-6">
+                     <a href="{{path('app_accueil')}}" class="btn btn-info">retour</a> 
+                  </div>
+               </div>
+               {{ form_end(form, {render_rest: false}) }}
+            </div>
+         </div>
+      </div>
+   </div>
+{% endblock %}
+
+{% block javascripts %}
+<script>
+const newItem = (e) => {
+   const collectionHolder = document.querySelector(e.currentTarget.dataset.collection);
+   let index = parseInt(collectionHolder.dataset.index);
+
+   const item = document.createElement("div");
+   //item.classList.add("col-sm-9", "item");
+   //const item = document.querySelector("div.item");
+
+   item.innerHTML = collectionHolder.dataset.prototype.replace(/__name__/g, index);
+   item.querySelector(".btn-remove").addEventListener("click", () => item.remove());
+   
+   collectionHolder.appendChild(item);
+   collectionHolder.dataset.index = index + 1;
+
+}
+
+document
+   .querySelectorAll('.btn-remove')
+   .forEach(btn => btn.addEventListener("click", (e) => e.currentTarget.closest(".form-group").remove()));
+document
+   .querySelectorAll('#new_ordinateur')
+   .forEach(btn => btn.addEventListener("click", newItem));
+document
+   .querySelectorAll('#new_peripherique')
+   .forEach(btn => btn.addEventListener("click", newItem));
+
+</script>
+{% endblock %}
