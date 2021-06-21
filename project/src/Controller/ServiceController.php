@@ -17,10 +17,10 @@ class ServiceController extends AbstractController
      */
     public function service(): Response
     {
-        $datas = $this->getDoctrine()->getRepository(Services::class)->findBy([], ['id'=>'desc']);
+        $datas = $this->getDoctrine()->getRepository(Services::class)->findBy([], ['id' => 'desc']);
         // dd($datas);
         return $this->render('app/service/index.html.twig', [
-            'controller_name' => 'service',
+            'active' => 'service',
             'datas' => $datas
         ]);
     }
@@ -33,7 +33,7 @@ class ServiceController extends AbstractController
         // $datas = $this->getDoctrine()->getRepository(Services::class)->findAll();
         // dd($datas);
         return $this->render('app/service/detail.html.twig', [
-            'controller_name' => 'intervention',
+            'active' => 'service',
             'datas' => $service
         ]);
     }

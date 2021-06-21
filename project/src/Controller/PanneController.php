@@ -17,10 +17,10 @@ class PanneController extends AbstractController
      */
     public function panne(): Response
     {
-        $datas = $this->getDoctrine()->getRepository(Pannes::class)->findBy([], ['id'=>'desc']);
+        $datas = $this->getDoctrine()->getRepository(Pannes::class)->findBy([], ['id' => 'desc']);
         // dd($datas);
         return $this->render('app/panne/index.html.twig', [
-            'controller_name' => 'panne',
+            'active' => 'panne',
             'datas' => $datas
         ]);
     }
@@ -35,7 +35,7 @@ class PanneController extends AbstractController
         // $datas = $this->getDoctrine()->getRepository(Interventions::class)->findAll();
         // dd($datas);
         return $this->render('app/panne/detail.html.twig', [
-            'controller_name' => 'panne',
+            'active' => 'panne',
             'datas' => $panne
         ]);
     }

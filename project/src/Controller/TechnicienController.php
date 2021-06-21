@@ -17,10 +17,10 @@ class TechnicienController extends AbstractController
      */
     public function technicien(): Response
     {
-        $datas = $this->getDoctrine()->getRepository(Techniciens::class)->findBy([], ['id'=>'desc']);
+        $datas = $this->getDoctrine()->getRepository(Techniciens::class)->findBy([], ['id' => 'desc']);
         // dd($datas);
         return $this->render('app/technicien/index.html.twig', [
-            'controller_name' => 'technicien',
+            'active' => 'technicien',
             'datas' => $datas
         ]);
     }
@@ -31,7 +31,7 @@ class TechnicienController extends AbstractController
     public function detail(Techniciens $technicien): Response
     {
         return $this->render('app/technicien/detail.html.twig', [
-            'controller_name' => 'technicien',
+            'active' => 'technicien',
             'datas' => $technicien
         ]);
     }

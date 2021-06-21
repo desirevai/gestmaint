@@ -20,26 +20,26 @@ class DirectionController extends AbstractController
      */
     public function direction(): Response
     {
-        $datas = $this->getDoctrine()->getRepository(Directions::class)->findBy([], ['id'=>'desc']);
+        $datas = $this->getDoctrine()->getRepository(Directions::class)->findBy([], ['id' => 'desc']);
         // dd($datas);
         return $this->render('app/direction/index.html.twig', [
-            'controller_name' => 'direction',
+            'active' => 'direction',
             'datas' => $datas
         ]);
     }
-    
+
     /**
      * @Route("/detail/{id}", name="app_direction_detail")
      */
     public function detail(Directions $direction): Response
     {
-        
+
         return $this->render('app/direction/detail.html.twig', [
-            'controller_name' => 'direction',
+            'active' => 'direction',
             'datas' => $direction
         ]);
     }
-    
+
     /**
      * @Route("/edition", name="app_direction_create")
      * @Route("/edition/{id}", name="app_direction_edit")
@@ -51,28 +51,27 @@ class DirectionController extends AbstractController
         }
         $form = $this->createForm(DirectionsType::class, $direction);
         $form->handleRequest($request);
-        
-        if ($form->isSubmitted() && $form->isValid()) {  
+
+        if ($form->isSubmitted() && $form->isValid()) {
             // $data = $form->getData();
             $em = $this->getDoctrine()->getManager();
             $em->persist($direction);
-            $em->flush();  
+            $em->flush();
             if ($direction->getId() == null) {
                 $this->addFlash(
                     'success',
                     "La direction <strong>$direction</strong> à été créée avec success."
                 );
-            }else {
+            } else {
                 $this->addFlash(
                     'success',
                     "La direction <strong>$direction</strong> à été mis à jours avec success."
                 );
             }
             return $this->redirectToRoute('app_direction');
-
         }
         return $this->render('app/direction/create.html.twig', [
-            'controller_name' => 'direction',
+            'active' => 'direction',
             'form' => $form->createView(),
         ]);
     }
@@ -83,11 +82,11 @@ class DirectionController extends AbstractController
     public function delete(Directions $direction): Response
     {
         $em = $this->getDoctrine()->getManager();
-            $em->remove($direction);
-            $em->flush();
+        $em->remove($direction);
+        $em->flush();
         $this->addFlash(
-           'success',
-           "La direction <strong>$direction</strong> à été supprimé avec success"
+            'success',
+            "La direction <strong>$direction</strong> à été supprimé avec success"
         );
         return $this->redirectToRoute('app_direction');
     }

@@ -17,10 +17,10 @@ class SolutionController extends AbstractController
      */
     public function solution(): Response
     {
-        $datas = $this->getDoctrine()->getRepository(Solutions::class)->findBy([], ['id'=>'desc']);
+        $datas = $this->getDoctrine()->getRepository(Solutions::class)->findBy([], ['id' => 'desc']);
         // dd($datas);
         return $this->render('app/solution/index.html.twig', [
-            'controller_name' => 'solution',
+            'active' => 'solution',
             'datas' => $datas
         ]);
     }
@@ -35,7 +35,7 @@ class SolutionController extends AbstractController
         // $datas = $this->getDoctrine()->getRepository(Interventions::class)->findAll();
         // dd($datas);
         return $this->render('app/solution/detail.html.twig', [
-            'controller_name' => 'solution',
+            'active' => 'solution',
             'datas' => $solution
         ]);
     }

@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Interventions;
 use App\Form\InterventionType;
+use Knp\Component\Pager\PaginatorInterface;
 
 /**
  * @Route("/dashboard/interventions")
@@ -17,12 +18,18 @@ class InterventionController extends AbstractController
     /**
      * @Route("/", name="app_intervention")
      */
-    public function intervention(): Response
+    public function intervention(Request $request, PaginatorInterface $paginator): Response
     {
-        $datas = $this->getDoctrine()->getRepository(Interventions::class)->findBy([], ['id'=>'desc']);
+        $donnes = $this->getDoctrine()->getRepository(Interventions::class)->findBy([], ['id' => 'desc']);
         // dd($datas);
+
+        $datas = $paginator->paginate(
+            $donnes,
+            $request->query->getInt('page', 1),
+            10
+        );
         return $this->render('app/intervention/index.html.twig', [
-            'controller_name' => 'intervention',
+            'active' => 'intervention',
             'datas' => $datas
         ]);
     }
@@ -37,7 +44,7 @@ class InterventionController extends AbstractController
         // $datas = $this->getDoctrine()->getRepository(Interventions::class)->findAll();
         // dd($datas);
         return $this->render('app/intervention/detail.html.twig', [
-            'controller_name' => 'intervention',
+            'active' => 'intervention',
             'datas' => $intervention
         ]);
     }
@@ -53,30 +60,28 @@ class InterventionController extends AbstractController
         }
         $form = $this->createForm(InterventionType::class, $intervention);
         $form->handleRequest($request);
-        
-        if ($form->isSubmitted() && $form->isValid()) {  
+
+        if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($intervention);
-            $em->flush();  
+            $em->flush();
             dd($intervention);
             if ($intervention->getId() == null) {
                 $this->addFlash(
                     'success',
                     "L'intervention <strong>$intervention</strong> à été créée avec success."
                 );
-            }else {
+            } else {
                 $this->addFlash(
                     'success',
                     "L'intervention <strong>$intervention</strong> à été mis à jours avec success."
                 );
             }
             return $this->redirectToRoute('app_intervention');
-
         }
         return $this->render('app/intervention/create.html.twig', [
-            'controller_name' => 'intervention',
+            'active' => 'intervention',
             'form' => $form->createView(),
         ]);
     }
-
 }

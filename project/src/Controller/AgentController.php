@@ -18,14 +18,14 @@ class AgentController extends AbstractController
      */
     public function agent(): Response
     {
-        $datas = $this->getDoctrine()->getRepository(Agents::class)->findBy([], ['id'=>'desc']);
+        $datas = $this->getDoctrine()->getRepository(Agents::class)->findBy([], ['id' => 'desc']);
         // dd($datas);
         return $this->render('app/agent/index.html.twig', [
-            'controller_name' => 'agent',
+            'active' => 'agent',
             'datas' => $datas
         ]);
     }
-    
+
     /**
      * @Route("/detail/{id}", name="app_agent_detail")
      */
@@ -34,7 +34,7 @@ class AgentController extends AbstractController
         // $datas = $this->getDoctrine()->getRepository(Agents::class)->findAll();
         // dd($agent);
         return $this->render('app/agent/detail.html.twig', [
-            'controller_name' => 'agent',
+            'active' => 'agent',
             'datas' => $agent
         ]);
     }

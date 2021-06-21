@@ -1,66 +1,66 @@
 <nav class="sidebar sidebar-offcanvas dynamic-active-class-disabled" id="sidebar">
-    <ul class="nav">
-        <li class="nav-item nav-profile not-navigation-link">
-            <div class="nav-link">
-                <button class="btn btn-success btn-block">
-                    Nouvelle Intervention 
-                    <i class="mdi mdi-plus"></i>
-                </button>
-            </div>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link" href="{{path('app_accueil')}}">
-                <i class="menu-icon mdi mdi-home"></i>
-                <span class="menu-title">Dashboard</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{path('app_intervention')}}">
-                <i class="menu-icon mdi mdi-backup-restore"></i>
-                <span class="menu-title">Interventions</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{path('app_ordinateur')}}">
-                <i class="menu-icon mdi mdi-laptop"></i>
-                <span class="menu-title">Ordinateurs</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{path('app_panne')}}">
-                <i class="menu-icon mdi mdi-block-helper"></i>
-                <span class="menu-title">Pannes</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{path('app_solution')}}">
-                <i class="menu-icon mdi mdi-lightbulb-outline"></i>
-                <span class="menu-title">Solutions</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{path('app_technicien')}}">
-                <i class="menu-icon mdi mdi-lightbulb-outline"></i>
-                <span class="menu-title">Techniciens</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{path('app_agent')}}">
-                <i class="menu-icon mdi mdi-lightbulb-outline"></i>
-                <span class="menu-title">Agents</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{path('app_service')}}">
-                <i class="menu-icon mdi mdi-lightbulb-outline"></i>
-                <span class="menu-title">Services</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{path('app_direction')}}">
-                <i class="menu-icon mdi mdi-lightbulb-outline"></i>
-                <span class="menu-title">Directions</span>
-            </a>
-        </li>
-    </ul>
+	<ul class="nav">
+		<li class="nav-item nav-profile not-navigation-link">
+			<div class="nav-link">
+				<button class="btn btn-success btn-block">
+					Nouvelle Intervention
+					<i class="mdi mdi-plus"></i>
+				</button>
+			</div>
+		</li>
+		<li class="nav-item {{ (active is defined and active == 'accueil') ? 'active' }}">
+			<a class="nav-link" href="{{path('app_accueil')}}">
+				<i class="menu-icon mdi mdi-home"></i>
+				<span class="menu-title">Dashboard</span>
+			</a>
+		</li>
+		<li class="nav-item {{ (active is defined and active == 'intervention') ? 'active' }}">
+			<a class="nav-link" href="{{path('app_intervention')}}">
+				<i class="menu-icon mdi mdi-backup-restore"></i>
+				<span class="menu-title">Interventions</span>
+			</a>
+		</li>
+		<li class="nav-item {{ (active is defined and active == 'ordinateur') ? 'active' }}">
+			<a class="nav-link" href="{{path('app_ordinateur')}}">
+				<i class="menu-icon mdi mdi-laptop"></i>
+				<span class="menu-title">Ordinateurs</span>
+			</a>
+		</li>
+		<li class="nav-item {{ (active is defined and active == 'panne') ? 'active' }}">
+			<a class="nav-link" href="{{path('app_panne')}}">
+				<i class="menu-icon mdi mdi-block-helper"></i>
+				<span class="menu-title">Pannes</span>
+			</a>
+		</li>
+		<li class="nav-item {{ (active is defined and active == 'solution') ? 'active' }}">
+			<a class="nav-link" href="{{path('app_solution')}}">
+				<i class="menu-icon mdi mdi-lightbulb-outline"></i>
+				<span class="menu-title">Solutions</span>
+			</a>
+		</li>
+		<li class="nav-item {{ (active is defined and active == 'technicien') ? 'active' }}">
+			<a class="nav-link" href="{{path('app_technicien')}}">
+				<i class="menu-icon mdi mdi-lightbulb-outline"></i>
+				<span class="menu-title">Techniciens</span>
+			</a>
+		</li>
+		<li class="nav-item {{ (active is defined and active == 'agent') ? 'active' }}">
+			<a class="nav-link" href="{{path('app_agent')}}">
+				<i class="menu-icon mdi mdi-lightbulb-outline"></i>
+				<span class="menu-title">Agents</span>
+			</a>
+		</li>
+		<li class="nav-item {{ (active is defined and active == 'service') ? 'active' }}">
+			<a class="nav-link" href="{{path('app_service')}}">
+				<i class="menu-icon mdi mdi-lightbulb-outline"></i>
+				<span class="menu-title">Services</span>
+			</a>
+		</li>
+		<li class="nav-item {{ (active is defined and active == 'direction') ? 'active' }}">
+			<a class="nav-link" href="{{path('app_direction')}}">
+				<i class="menu-icon mdi mdi-lightbulb-outline"></i>
+				<span class="menu-title">Directions</span>
+			</a>
+		</li>
+	</ul>
 </nav>

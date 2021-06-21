@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<div class="container py-5 mb-4 text-center">
+		<h1 class="display-404 text-danger">403</h1>
+		<h2 class="h3">Accès refusé</h2>
+		<p class="text-muted">Vous n'avez les accèss pour accéder à cette zone.
+			<a href="{{path('app.accueil')}}" class="font-weight-medium">Retour à la page d'accueil</a><br>
+		</p>
+	</div>
+
+	{# <div class="container">
+								<h1>Erreur 404</h1>
+							</div> #}
+{% endblock %}

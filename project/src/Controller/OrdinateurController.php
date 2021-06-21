@@ -17,10 +17,10 @@ class OrdinateurController extends AbstractController
      */
     public function ordinateur(): Response
     {
-        $datas = $this->getDoctrine()->getRepository(Ordinateurs::class)->findBy([], ['id'=>'desc']);
+        $datas = $this->getDoctrine()->getRepository(Ordinateurs::class)->findBy([], ['id' => 'desc']);
         // dd($datas);
         return $this->render('app/ordinateur/index.html.twig', [
-            'controller_name' => 'ordinateur',
+            'active' => 'ordinateur',
             'datas' => $datas
         ]);
     }
@@ -31,7 +31,7 @@ class OrdinateurController extends AbstractController
     public function detail(Ordinateurs $ordinateur): Response
     {
         return $this->render('app/ordinateur/detail.html.twig', [
-            'controller_name' => 'Ordinateur',
+            'active' => 'ordinateur',
             'datas' => $ordinateur
         ]);
     }

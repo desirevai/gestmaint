@@ -19,10 +19,10 @@ class PeripheriqueController extends AbstractController
      */
     public function peripherique(): Response
     {
-        $datas = $this->getDoctrine()->getRepository(Peripheriques::class)->findBy([], ['id'=>'desc']);
+        $datas = $this->getDoctrine()->getRepository(Peripheriques::class)->findBy([], ['id' => 'desc']);
         // dd($datas);
         return $this->render('app/peripherique/index.html.twig', [
-            'controller_name' => 'peripherique',
+            'active' => 'peripherique',
             'datas' => $datas
         ]);
     }
@@ -34,7 +34,7 @@ class PeripheriqueController extends AbstractController
     {
 
         return $this->render('app/peripherique/detail.html.twig', [
-            'controller_name' => 'peripherique',
+            'active' => 'peripherique',
             'datas' => $peripherique
         ]);
     }
@@ -50,21 +50,21 @@ class PeripheriqueController extends AbstractController
         }
         $form = $this->createForm(PeripheriquesSimpleType::class, $peripherique);
         $form->handleRequest($request);
-        
-        if ($form->isSubmitted() && $form->isValid()) {  
+
+        if ($form->isSubmitted() && $form->isValid()) {
             // $data = $form->getData();
             $em = $this->getDoctrine()->getManager();
             $em->persist($peripherique);
-            $em->flush();  
-            
+            $em->flush();
+
             $this->addFlash(
                 'success',
                 "Operation effectué avec success."
             );
             return $this->redirectToRoute('app_ordinateur');
-
         }
         return $this->render('app/peripherique/edit.html.twig', [
+            'active' => 'peripherique',
             'form' => $form->createView(),
         ]);
     }
