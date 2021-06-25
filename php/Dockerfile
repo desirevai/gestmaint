@@ -15,7 +15,7 @@ RUN curl -sSk https://getcomposer.org/installer | php -- --disable-tls && \
 RUN docker-php-ext-configure intl
 RUN docker-php-ext-install pdo pdo_pgsql pgsql pdo_mysql gd opcache intl zip calendar dom mbstring zip gd xsl
 RUN pecl install apcu && docker-php-ext-enable apcu
-RUN docker exec www_gestmaint composer create-project symfony/website-skeleton project
+# RUN docker exec www_gestmaint composer create-project symfony/website-skeleton ./
 
 # RUN version=$(php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;") \
 #     && curl -A "Docker" -o /tmp/blackfire-probe.tar.gz -D - -L -s https://blackfire.io/api/v1/releases/probe/php/linux/amd64/$version \
