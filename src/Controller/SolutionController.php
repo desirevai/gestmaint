@@ -2,10 +2,13 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Solutions;
+use App\Entity\Interventions;
+use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\Solutions;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/dashboard/solutions")
@@ -13,12 +16,20 @@ use App\Entity\Solutions;
 class SolutionController extends AbstractController
 {
     /**
-     * @Route("/", name="app_solution")
+     * @Route("", name="app_solution")
+     *
+     * @param Request $request
+     * @param PaginatorInterface $paginator
+     * @return Response
      */
-    public function solution(): Response
+    public function solution(Request $request, PaginatorInterface $paginator): Response
     {
-        $datas = $this->getDoctrine()->getRepository(Solutions::class)->findBy([], ['id' => 'desc']);
-        // dd($datas);
+        $donnes = $this->getDoctrine()->getRepository(Solutions::class)->findBy([], ['id' => 'desc']);
+        $datas = $paginator->paginate(
+            $donnes,
+            $request->query->getInt('page', 1),
+            10
+        );
         return $this->render('app/solution/index.html.twig', [
             'active' => 'solution',
             'datas' => $datas
@@ -27,6 +38,9 @@ class SolutionController extends AbstractController
 
     /**
      * @Route("/detail/{id}", name="app_solution_detail")
+     *
+     * @param Solutions $solution
+     * @return Response
      */
     public function detail(Solutions $solution): Response
     {

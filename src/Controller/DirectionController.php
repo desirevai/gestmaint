@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Directions;
 use App\Form\DirectionsType;
+use Knp\Component\Pager\PaginatorInterface;
 
 /**
  * @Route("/dashboard/directions")
@@ -16,12 +17,20 @@ class DirectionController extends AbstractController
 {
 
     /**
-     * @Route("/", name="app_direction")
+     * @Route("", name="app_direction")
+     *
+     * @param Request $request
+     * @param PaginatorInterface $paginator
+     * @return Response
      */
-    public function direction(): Response
+    public function direction(Request $request, PaginatorInterface $paginator): Response
     {
-        $datas = $this->getDoctrine()->getRepository(Directions::class)->findBy([], ['id' => 'desc']);
-        // dd($datas);
+        $donnes = $this->getDoctrine()->getRepository(Directions::class)->findBy([], ['id' => 'desc']);
+        $datas = $paginator->paginate(
+            $donnes,
+            $request->query->getInt('page', 1),
+            10
+        );
         return $this->render('app/direction/index.html.twig', [
             'active' => 'direction',
             'datas' => $datas
@@ -30,6 +39,9 @@ class DirectionController extends AbstractController
 
     /**
      * @Route("/detail/{id}", name="app_direction_detail")
+     *
+     * @param Directions $direction
+     * @return Response
      */
     public function detail(Directions $direction): Response
     {
@@ -43,6 +55,10 @@ class DirectionController extends AbstractController
     /**
      * @Route("/edition", name="app_direction_create")
      * @Route("/edition/{id}", name="app_direction_edit")
+     *
+     * @param Directions|null $direction
+     * @param Request $request
+     * @return Response
      */
     public function create(?Directions $direction, Request $request): Response
     {
@@ -78,6 +94,9 @@ class DirectionController extends AbstractController
 
     /**
      * @Route("/delete/{id}", name="app_direction_delete")
+     *
+     * @param Directions $direction
+     * @return Response
      */
     public function delete(Directions $direction): Response
     {

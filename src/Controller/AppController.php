@@ -5,10 +5,6 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\Interventions;
-use App\Entity\Agents;
-use App\Entity\Services;
-use App\Entity\Directions;
 
 /**
  * @Route("/dashboard")
@@ -16,7 +12,9 @@ use App\Entity\Directions;
 class AppController extends AbstractController
 {
     /**
-     * @Route("/", name="app_accueil")
+     * @Route("", name="app_accueil")
+     *
+     * @return Response
      */
     public function index(): Response
     {

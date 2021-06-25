@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DirecteurController!
+{% endblock %}
+
+{% block body %}
+
+	<div class="row">
+		<div class="col-12 grid-margin">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title mb-4">Liste des directions</h5>
+					<p class="card-description">
+						<a href="{{path('app_direction_create')}}" class="btn btn-outline-primary">Nouvelle direction</a>
+					</p>
+					<div class="fluid-container">
+						{% if datas is defined %}
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>
+											#
+										</th>
+										<th>
+											Libelle
+										</th>
+										<th>
+											Actions
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									{% for item in datas %}
+										<tr>
+											<td>
+												#{{item.id}}
+											</td>
+											<td>
+												{{item.libelle}}
+											</td>
+											<td>
+												<a href="{{path('app_direction_detail', {'id': item.id})}}" class="btn btn-outline-primary">
+													<i class="mdi mdi-eye-plus"></i>
+												</a>
+												|
+												<a href="{{path('app_direction_edit', {'id': item.id})}}" class="btn btn-outline-info">
+													<i class="mdi mdi-file-document-edit"></i>
+												</a>
+												|
+												<a href="#" class="ml-5 btn btn-outline-danger">
+													<i class="mdi mdi-trash-can"></i>
+												</a>
+											</td>
+										</tr>
+									{% endfor %}
+								</tbody>
+							</table>
+						{% else %}
+							<div class="alert alert-primary my-auto">
+								<p class="text-uppercase">Base de donnée
+									<strong>vide</strong>
+									ou donnée(s)
+									<strong>non reçue</strong>
+									!</p>
+							</div>
+						{% endif %}
+					</div>
+					<div class="text-center pt-3">
+						{{ knp_pagination_render(datas) }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

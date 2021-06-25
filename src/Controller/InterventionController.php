@@ -16,7 +16,11 @@ use Knp\Component\Pager\PaginatorInterface;
 class InterventionController extends AbstractController
 {
     /**
-     * @Route("/", name="app_intervention")
+     * @Route("", name="app_intervention")
+     *
+     * @param Request $request
+     * @param PaginatorInterface $paginator
+     * @return Response
      */
     public function intervention(Request $request, PaginatorInterface $paginator): Response
     {
@@ -36,6 +40,9 @@ class InterventionController extends AbstractController
 
     /**
      * @Route("/detail/{id}", name="app_intervention_detail")
+     *
+     * @param Interventions $intervention
+     * @return Response
      */
     public function detail(Interventions $intervention): Response
     {
@@ -52,6 +59,10 @@ class InterventionController extends AbstractController
     /**
      * @Route("/edition", name="app_intervention_create")
      * @Route("/edition/{id}", name="app_intervention_edit")
+     *
+     * @param Interventions|null $intervention
+     * @param Request $request
+     * @return Response
      */
     public function create(?Interventions $intervention, Request $request): Response
     {
